@@ -9,21 +9,31 @@ export default function Home({ collections }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <h1 className="title">
-          Welcome to the Component Buffet
-        </h1>
-        {collections.map((collection, index) => (
-          <pfe-card key={ index }>
-            <h2>{ collection.name }</h2>
-            <p>{ collection.description }</p>
-            <Link href={ collection.id }>
-              <pfe-cta>
-                <a>Go to the collection</a>
-              </pfe-cta>
-            </Link>
-          </pfe-card>
-        ))}
+      <main className="container homepage">
+        <header className="hero container">
+          <h1 className="title">
+            Welcome to the Red Hat web component buffet!
+          </h1>
+          <p>Explore the projects which contain components designed by and for Red Hatters.</p>
+        </header>
+          <article className="pfe-l-grid pfe-m-gutters pfe-m-all-6-col pfe-m-all-4-col-on-md pfe-m-all-3-col-on-lg">
+          {collections.map((collection, index) => (
+            <pfe-card color="lightest" border key={ index }>
+              <Link href={ collection.id }>
+                <h2 slot="pfe-card--header"><a>{ collection.name }</a></h2>
+              </Link>
+              <p>This is the lightest card with a border</p>
+              <div slot="pfe-card--footer">
+              <Link href={ collection.id }>
+                <pfe-cta>
+                  <a>View this collection</a>
+                </pfe-cta>
+              </Link>
+              </div>
+            </pfe-card>
+
+          ))}
+        </article>
       </main>
 
       <footer>
