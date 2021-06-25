@@ -10,11 +10,13 @@ export default function Home({ collections }) {
       </Head>
      
       <main className=" main container">
-        <header className="hero ">
-          <h1 className="title">Red Hat Web Component Buffet</h1>
-          <p>Explore the projects which contain components designed by and for Red Hatters.</p>
-          <br/>
-        </header>
+        <pfe-band>
+          <header className="hero ">
+            <h1 className="title">Red Hat Web Component Buffet</h1>
+            <p>Explore the projects which contain components designed by and for Red Hatters.</p>
+            <br/>
+          </header>
+        </pfe-band>
         <article className="pfe-l-grid pfe-m-gutters pfe-m-all-6-col-on-md pfe-m-all-4-col-on-lg">
           {collections.map((collection, index) => (
             <pfe-card color="lightest" border key={ index }>
