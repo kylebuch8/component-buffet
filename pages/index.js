@@ -21,13 +21,13 @@ export default function Home({ collections }) {
           {collections.map((collection, index) => (
             <pfe-card color="lightest" border key={ index }>
               <Link href={ collection.id }>
-                <h3 slot="pfe-card--header"><a href="#">{ collection.name }</a></h3>
+                <h3 slot="pfe-card--header"><a>{ collection.name }</a></h3>
               </Link>
               <p>This is the lightest card with a border</p>
               <div slot="pfe-card--footer">
               <Link href={ collection.id }>
                 <pfe-cta>
-                  <a href="#">View this collection</a>
+                  <a>View this collection</a>
                 </pfe-cta>
               </Link>
               </div>
