@@ -52,6 +52,10 @@ hr {
 .homepage h2  {
   color: var(--pfe-theme--color--ui-accent);
 }
+.homepage h3 {
+
+}
+.homepage h4 a,
 .homepage h3 a {
   color: inherit;
 }

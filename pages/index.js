@@ -5,7 +5,7 @@ export default function Home({ collections }) {
   return (
     <div className="wrapper container homepage">
       <Head>
-        <title>Create Next App</title>
+        <title>Red Hat Web Component Buffet</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
      
@@ -15,16 +15,16 @@ export default function Home({ collections }) {
           <h1 className="title">Red Hat Web Component Buffet</h1>
           <p>Explore the projects which contain components designed by and for Red Hatters.</p>
         </pfe-band>
-<br/>
+<br/><br/>
         <pfe-band color="lightest">
         <header slot="pfe-band--header">
       <h2>The projects</h2>
       </header>
-        <article class="pfe-l-grid pfe-l-grid-fill-height pfe-m-gutters pfe-m-all-6-col">
+        <article class="pfe-l-grid pfe-l-grid-fill-height pfe-m-gutters pfe-m-all-6-col-on-md pfe-m-all-3-col-on-lg">
           {collections.map((collection, index) => (
-            <pfe-card color="lightest" border key={ index }>
+            <pfe-card color="darker" border key={ index }>
               <Link href={ collection.id }>
-                <h3 slot="pfe-card--header"><a>{ collection.name }</a></h3>
+                <h4 slot="pfe-card--header"><a>{ collection.name }</a></h4>
               </Link>
               <p>{ collection.description }</p>
               <div slot="pfe-card--footer">
@@ -39,7 +39,7 @@ export default function Home({ collections }) {
           ))}
           </article>
         </pfe-band>
-        <br/>
+        <br/><br/>
         <pfe-band color="lightest">
         <h2>What are web components?</h2>
         <p>Web components are a set of web platform APIs that allow you to create new custom, reusable, encapsulated HTML tags to use in web pages and web apps. Custom components and widgets build on the Web Component standards, will work across modern browsers, and can be used with any JavaScript library or framework that works with HTML.</p>
