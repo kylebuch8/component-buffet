@@ -1,4 +1,5 @@
-import Head from 'next/head'
+import Head from 'next/head';
+import Link from 'next/link';
 
 export default function Home({ collections }) {
   return (
@@ -14,7 +15,12 @@ export default function Home({ collections }) {
         </h1>
         {collections.map((collection, index) => (
           <pfe-card key={ index }>
-            <h2>{ collection }</h2>
+            <h2>{ collection.name }</h2>
+            <Link href={ collection.id }>
+              <pfe-cta>
+                <a>Go to the collection</a>
+              </pfe-cta>
+            </Link>
           </pfe-card>
         ))}
       </main>
@@ -35,7 +41,16 @@ export async function getStaticProps() {
   return {
     props: {
       collections: [
-        "patternfly-elements", "chapeaux"
+        {
+          id: "patternfly-elements",
+          name: "PatternFly Elements",
+          description: "Something really cool"
+        },
+        {
+          id: "chapeaux",
+          name: "Chapeaux",
+          description: "Functional components"
+        }
       ]
     }
   };
