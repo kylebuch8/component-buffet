@@ -8,16 +8,21 @@ export default function Collection(collection) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-
       <main className=" main container">
         <header className="hero container">
-          <h1 className="title">
-            Welcome to the { collection.name } page
-          </h1>
+          <h1 className="title">{ collection.name }</h1>
         </header>
         <p>{ collection.description }</p>
         <div dangerouslySetInnerHTML={{ __html: collection.summary }}></div>
         <pfe-icon icon="fas-github"></pfe-icon>
+        <h2>{ collection.components.length } Elements</h2>
+        <ul>
+          {collection.components.map((component, index) => (
+            <li key={ index }>
+              { component.name }
+            </li>
+          ))}
+        </ul>
         <footer>
           Powered by{' '}<a href="https://www.youtube.com/watch?v=jBsPZV14I-k">Cheeseburgers in Paradise</a>
         </footer>
@@ -94,8 +99,8 @@ export async function getStaticProps({ params }) {
       ]
     },
     "chapeaux": {
-      name: "Chapeaux",
-      description: "Functional components",
+      name: "Chapeaux Components",
+      description: "Widgets for a digital supply chain of web assets",
       repo: "https://github.com/chapeaux/cpx-components",
       components: [
         {
