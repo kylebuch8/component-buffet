@@ -13,6 +13,7 @@ export default function Collection(collection) {
           Welcome to the { collection.name } page
         </h1>
         <div dangerouslySetInnerHTML={{ __html: collection.summary }}></div>
+        <pfe-icon icon="fas-github"></pfe-icon>
       </main>
 
       <footer>
