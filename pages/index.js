@@ -13,7 +13,9 @@ export default function Home({ collections }) {
           Welcome to the Component Buffet
         </h1>
         {collections.map((collection, index) => (
-          <h2 key={ index }>{ collection }</h2>
+          <pfe-card key={ index }>
+            <h2>{ collection }</h2>
+          </pfe-card>
         ))}
       </main>
 

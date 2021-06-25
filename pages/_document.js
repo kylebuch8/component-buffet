@@ -12,6 +12,7 @@ class MyDocument extends Document {
         <Head>
           {/* <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display&family=Red+Hat+Text&display=swap" rel="stylesheet" /> */}
+          <link rel="stylesheet" href="https://unpkg.com/@patternfly/pfelement@1.9.3/dist/pfelement.min.css" />
           <link rel="stylesheet" href="https://unpkg.com/@patternfly/pfe-styles@1.9.3/dist/pfe-layouts.min.css" />
         </Head>
         <body unresolved="true">
