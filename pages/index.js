@@ -22,7 +22,7 @@ export default function Home({ collections }) {
       </header>
         <article class="pfe-l-grid pfe-l-grid-fill-height pfe-m-gutters pfe-m-all-6-col-on-md pfe-m-all-3-col-on-lg">
           {collections.map((collection, index) => (
-            <pfe-card color="darker" border key={ index }>
+            <pfe-card color="darkest" border key={ index }>
               <Link href={ collection.id }>
                 <h4 slot="pfe-card--header"><a>{ collection.name }</a></h4>
               </Link>
