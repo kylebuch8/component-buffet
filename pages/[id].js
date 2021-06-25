@@ -7,15 +7,16 @@ export default function Collection(collection) {
         <title>{ collection.name } - Component Buffet</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-
+      
       <main className=" main container">
-        <header className="hero container">
+        <header className="hero ">
           <h1 className="title">
             Welcome to the { collection.name } page
           </h1>
         </header>
-        <p dangerouslySetInnerHTML={{ __html: collection.summary }}></p>
+        { collection.summary && 
+          <div dangerouslySetInnerHTML={{ __html: collection.summary }}></div>
+        }
         <pfe-icon icon="fas-github"></pfe-icon>
         <footer>
           Powered by{' '}<a href="https://www.youtube.com/watch?v=jBsPZV14I-k">Cheeseburgers in Paradise</a>

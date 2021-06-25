@@ -8,9 +8,9 @@ export default function Home({ collections }) {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+     
       <main className=" main container">
-        <header className="hero container">
+        <header className="hero ">
           <h1 className="title">
             Welcome to the Red Hat web component buffet!
           </h1>
