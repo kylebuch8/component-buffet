@@ -11,21 +11,29 @@ export default function Collection(collection) {
       </Head>
 
       <main className=" main container">
+        <pfe-band color="lightest">
         <header className="hero">
           <Link href="/">
-            <a>Home</a>
+            <a>&lt; Home</a>
           </Link>
+          <hr/>
+          <br/>
           <h1 className="title">{ collection.name }</h1>
         </header>
-
         { collection.website && 
-          <p><a href={ collection.website }>{ collection.website }</a></p>
+          <pfe-cta><a href={ collection.website }>Visit the website</a></pfe-cta>
         }
+        <br/>
+        <br/>
+        <br/>
         <p>{ collection.description }</p>
         { collection.summary && 
           <div dangerouslySetInnerHTML={{ __html: collection.summary }}></div>
         }
-        
+          </pfe-band>
+
+        <pfe-band color="lightest">
+
         <h2>{ collection.components.length } Elements</h2>
         <article>
           <pfe-accordion>
@@ -79,6 +87,8 @@ export default function Collection(collection) {
         <footer>
           Powered by{' '}<a href="https://www.youtube.com/watch?v=jBsPZV14I-k">Cheeseburgers in Paradise</a>
         </footer>
+        </pfe-band>
+
       </main>
     </div>
   )
