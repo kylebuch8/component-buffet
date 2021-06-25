@@ -16,11 +16,11 @@ export default function Home({ collections }) {
           </h1>
           <p>Explore the projects which contain components designed by and for Red Hatters.</p>
         </header>
-          <article className="pfe-l-grid pfe-m-gutters pfe-m-all-6-col pfe-m-all-4-col-on-md pfe-m-all-3-col-on-lg">
+        <article className="pfe-l-grid pfe-m-gutters pfe-m-all-6-col pfe-m-all-4-col-on-md pfe-m-all-3-col-on-lg">
           {collections.map((collection, index) => (
             <pfe-card color="lightest" border key={ index }>
               <Link href={ collection.id }>
-                <h2 slot="pfe-card--header"><a href="#">{ collection.name }</a></h2>
+                <h3 slot="pfe-card--header"><a href="#">{ collection.name }</a></h3>
               </Link>
               <p>This is the lightest card with a border</p>
               <div slot="pfe-card--footer">

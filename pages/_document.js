@@ -10,7 +10,7 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-        <link href="https://static.redhat.com/libs/redhat/redhat-theme/4/advanced-theme.css" rel="stylesheet" />
+        <link href="https://static.redhat.com/libs/redhat/redhat-theme/6/advanced-theme.css" rel="stylesheet" />
           <link rel="stylesheet" href="https://static.redhat.com/libs/redhat/redhat-font/2/webfonts/red-hat-font.css" />
           <link rel="stylesheet" href="https://unpkg.com/@patternfly/pfelement@1.9.3/dist/pfelement.min.css" />
           <link rel="stylesheet" href="https://unpkg.com/@patternfly/pfe-styles@1.9.3/dist/pfe-base.min.css" />
@@ -29,4 +29,4 @@ class MyDocument extends Document {
   }
 }
 
-export default MyDocument
+export default MyDocument 

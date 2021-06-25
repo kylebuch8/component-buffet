@@ -3,6 +3,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Red Hat Text", Roboto, Helvetica, sans-serif;
+  background: #eee;
 }
 
 * {
@@ -10,14 +11,19 @@ body {
 }
 main {
   font-family: "Red Hat Text";
+  background: #fff;
+  padding: 20px;
+  margin: 40px 0;
 }
 .container {
   max-width: 1400px;
-  margin: 50px auto;
+  margin-left: auto;
+  margin-right: auto;
+  --pfe-grid--Margin: var(--pfe-theme--content-spacer--body--md) 0;
 }
 .hero {
   width: 100%;
-    font-family: "Red Hat Display", Roboto,Helvetica, sans-serif;
+  font-family: "Red Hat Display", Roboto,Helvetica, sans-serif;
 }
 .homepage h1 a,
 .homepage h2 a,
