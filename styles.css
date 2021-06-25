@@ -72,3 +72,12 @@ footer a {
   color: inherit;
   text-decoration: underline;
 }
+code {
+  font-size: 12px;
+}
+
+code.wrap {
+  overflow: scroll;
+  max-width: 100%;
+  display: block; 
+}

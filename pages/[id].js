@@ -17,15 +17,34 @@ export default function Collection(collection) {
         { collection.summary && 
           <div dangerouslySetInnerHTML={{ __html: collection.summary }}></div>
         }
-        <pfe-icon icon="fas-github"></pfe-icon>
+        
         <h2>{ collection.components.length } Elements</h2>
-        <ul>
+        <article className="pfe-l-grid pfe-m-gutters pfe-m-all-6-col pfe-m-all-4-col-on-md pfe-m-all-4-col-on-lg">
+
           {collection.components.map((component, index) => (
-            <li key={ index }>
-              { component.name }
-            </li>
+            
+              <pfe-card color="lightest" border key={ index }>
+              <h4 slot="pfe-card--header">{ component.name } </h4>
+              <p>{ component.description } </p>
+              <p><pfe-icon icon="fas-github"></pfe-icon> <a href="{ component.repo }">GitHub</a> </p>
+              <h5>All the demos</h5>
+              <p> 
+                <a href="{ component.demo }">Official demo page</a><br/>
+                <a href="{ component.devDemo }">Dev demo</a><br/>
+                <a href="{ component.storybook }">Storybook</a>
+              </p>
+              <h5>Code now</h5>
+          
+              <code>{ component.install } </code>
+              <br/>
+              <br/>
+              <code class="wrap">
+              &lt;script type="module" src="{ component.unpkg }"&gt;&lt;/script&gt;
+              </code> 
+       
+              </pfe-card>
           ))}
-        </ul>
+        </article>
         <footer>
           Powered by{' '}<a href="https://www.youtube.com/watch?v=jBsPZV14I-k">Cheeseburgers in Paradise</a>
         </footer>
@@ -71,7 +90,7 @@ export async function getStaticProps({ params }) {
       components: [
         {
           name: "pfe-accordion",
-          description: "Accordion for PatternFly Elements",
+          description: "The PFE accordion has accessibility built-in!",
           repo: "https://github.com/patternfly/patternfly-elements/tree/master/elements/pfe-accordion",
           install: "npm i @patternfly/pfe-accordion",
           unpkg: "https://unpkg.com/@patternfly/pfe-accordion@latest/dist/pfe-accordion.umd.min.js",
@@ -81,7 +100,7 @@ export async function getStaticProps({ params }) {
         },
         {
           name: "pfe-cta",
-          description: "Call-to-action for PatternFly Elements",
+          description: "One call-to-action component, a variety of styles.",
           repo: "https://github.com/patternfly/patternfly-elements/tree/master/elements/pfe-cta",
           install: "npm i @patternfly/pfe-cta",
           unpkg: "https://unpkg.com/@patternfly/pfe-cta@latest/dist/pfe-cta.umd.min.js",
@@ -91,7 +110,7 @@ export async function getStaticProps({ params }) {
         },
         {
           name: "pfe-tabs",
-          description: "Tabs for PatternFly Elements",
+          description: "These tabs have variants, orientation, scroll overflow & more.",
           repo: "https://github.com/patternfly/patternfly-elements/tree/master/elements/pfe-tabs",
           install: "npm i @patternfly/pfe-tabs",
           unpkg: "https://unpkg.com/@patternfly/pfe-accordion@latest/dist/pfe-accordion.umd.min.js",
