@@ -16,6 +16,7 @@ export default function Home({ collections }) {
         {collections.map((collection, index) => (
           <pfe-card key={ index }>
             <h2>{ collection.name }</h2>
+            <p>{ collection.description }</p>
             <Link href={ collection.id }>
               <pfe-cta>
                 <a>Go to the collection</a>
