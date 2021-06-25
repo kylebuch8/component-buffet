@@ -19,3 +19,11 @@ main {
   width: 100%;
     font-family: "Red Hat Display", Roboto,Helvetica, sans-serif;
 }
+.homepage h1 a,
+.homepage h2 a,
+.homepage h3 a,
+.homepage h4 a,
+.homepage h5 a,
+.homepage h6 a{
+  color: inherit;
+}
