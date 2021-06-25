@@ -9,11 +9,14 @@ export default function Collection(collection) {
       </Head>
 
       <main className=" main container">
-        <header className="hero container">
+        <header className="hero">
           <h1 className="title">{ collection.name }</h1>
         </header>
+ 
         <p>{ collection.description }</p>
-        <div dangerouslySetInnerHTML={{ __html: collection.summary }}></div>
+        { collection.summary && 
+          <div dangerouslySetInnerHTML={{ __html: collection.summary }}></div>
+        }
         <pfe-icon icon="fas-github"></pfe-icon>
         <h2>{ collection.components.length } Elements</h2>
         <ul>
