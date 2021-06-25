@@ -11,17 +11,14 @@ body {
   font-family: "Red Hat Text", Roboto, Helvetica, sans-serif;
   background: transparent;
 }
-.wrapper {
-
-}
 .wrapper:before {
   content: "";
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background-image: url(/lawn.jpg);
+  background-image: url(/burger.jpg);
   background-position: center;
-
+  background-size: cover;
   z-index: -1;
 }
 
@@ -37,17 +34,21 @@ hr {
   background: rgb(255 255 255 / 90%);
   background: #fff;
   padding: var(--main-container--padding);
-  margin: 0;
+  margin: var(--pfe-theme--container-padding) 0 0 0;
   z-index: 1;
-  max-width: 1400px;
+  max-width: calc(1400px + 2 *  var(--pfe-theme--container-spacer) );
   box-shadow: 1px 1px 20px #000;
 }
 .container {
-  
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: var(--pfe-theme--container-spacer);
+  margin-right: var(--pfe-theme--container-spacer);
   --pfe-grid--Margin: var(--pfe-theme--content-spacer--body--md) 0;
-  
+}
+@media screen and (min-width: 1400px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 .hero {
   width: 100%;
