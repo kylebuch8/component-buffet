@@ -77,6 +77,11 @@ export async function getStaticProps() {
           id: "chapeaux",
           name: "Chapeaux",
           description: "Functional components"
+        },
+        {
+          id: "cp-elements",
+          name: "CPElements",
+          description: "This repo was created to keep track of custom web components made for the customer portal that aren't necessarily great candidates for open source."
         }
       ]
     }
