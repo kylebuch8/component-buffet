@@ -15,9 +15,8 @@ export default function Collection(collection) {
           Welcome to the { collection.name } page
         </h1>
         <p dangerouslySetInnerHTML={{ __html: collection.summary }}></p>
-        </header>
- 
-
+        <pfe-icon icon="fas-github"></pfe-icon>
+      </main> 
       <footer>
         Powered by{' '}<a href="https://www.youtube.com/watch?v=jBsPZV14I-k">Cheeseburgers in Paradise</a>
       </footer>
