@@ -57,7 +57,7 @@ export async function getStaticProps({ params }) {
     "patternfly-elements": {
       name: "PatternFly Elements",
       description: "Something really cool",
-      summary: "<p>Something even more cool than the description</p>",
+      summary: "<p>Something even more cool than the description</p><pfe-cta><a href='https://patternflyelements.com/'>Learn more</a></pfe-cta>",
       repo: "https://github.com/patternfly/patternfly-elements",
       components: [
         {
