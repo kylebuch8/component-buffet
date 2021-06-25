@@ -15,7 +15,8 @@ export default function Collection(collection) {
             Welcome to the { collection.name } page
           </h1>
         </header>
-        <p dangerouslySetInnerHTML={{ __html: collection.summary }}></p>
+        <p>{ collection.description }</p>
+        <div dangerouslySetInnerHTML={{ __html: collection.summary }}></div>
         <pfe-icon icon="fas-github"></pfe-icon>
         <footer>
           Powered by{' '}<a href="https://www.youtube.com/watch?v=jBsPZV14I-k">Cheeseburgers in Paradise</a>
@@ -215,7 +216,7 @@ export async function getStaticProps({ params }) {
       ]
     },
     "cp-elements": {
-      name: "CP Elements",
+      name: "CPElements",
       description: "This repo was created to keep track of custom web components made for the customer portal that aren't necessarily great candidates for open source.",
       repo: "https://gitlab.cee.redhat.com/customer-platform/cp-elements",
       components: [
