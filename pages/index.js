@@ -9,13 +9,17 @@ export default function Home({ collections }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
      
-      <main className=" main container">
-        <header className="hero ">
+      <br/>
+        <pfe-band color="lightest">
           <h1 className="title">Red Hat Web Component Buffet</h1>
           <p>Explore the projects which contain components designed by and for Red Hatters.</p>
-          <br/>
-        </header>
-        <article className="pfe-l-grid pfe-m-gutters pfe-m-all-6-col-on-md pfe-m-all-4-col-on-lg">
+        </pfe-band>
+<br/>
+        <pfe-band color="lightest">
+        <header slot="pfe-band--header">
+      <h2>DA PROJECTS</h2>
+      </header>
+        <article class="pfe-l-grid pfe-l-grid-fill-height pfe-m-gutters pfe-m-all-6-col">
           {collections.map((collection, index) => (
             <pfe-card color="lightest" border key={ index }>
               <Link href={ collection.id }>
@@ -32,11 +36,10 @@ export default function Home({ collections }) {
             </pfe-card>
 
           ))}
-        </article>
-        <aside>
-        <br/> 
-        <hr/>
+          </article>
+        </pfe-band>
         <br/>
+        <pfe-band color="lightest">
         <h2>What are web components?</h2>
         <p>Web components are a set of web platform APIs that allow you to create new custom, reusable, encapsulated HTML tags to use in web pages and web apps. Custom components and widgets build on the Web Component standards, will work across modern browsers, and can be used with any JavaScript library or framework that works with HTML.</p>
 
@@ -45,12 +48,12 @@ export default function Home({ collections }) {
         <h2>Why are there multiple projects?</h2>
         <p>Different projects have different focus areas. There are reasons, ok?</p>
 
+          <footer slot="pfe-band--footer">
+          Powered by{' '}<a href="https://www.youtube.com/watch?v=jBsPZV14I-k">Cheeseburgers in Paradise</a>
+        </footer> 
+        </pfe-band>
 
-        </aside>
-        <footer>
-        Powered by{' '}<a href="https://www.youtube.com/watch?v=jBsPZV14I-k">Cheeseburgers in Paradise</a>
-      </footer>
-      </main>
+        
 
 
     </div>
