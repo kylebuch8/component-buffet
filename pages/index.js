@@ -9,6 +9,7 @@ export default function Home({ collections }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
      
+     <div className="main">
       <br/>
         <pfe-band color="lightest">
           <h1 className="title">Red Hat Web Component Buffet</h1>
@@ -53,7 +54,7 @@ export default function Home({ collections }) {
         </footer> 
         </pfe-band>
 
-        
+        </div>
 
 
     </div>
