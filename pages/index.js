@@ -9,20 +9,28 @@ export default function Home({ collections }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <h1 className="title">
-          Welcome to the Component Buffet
-        </h1>
-        {collections.map((collection, index) => (
-          <pfe-card key={ index }>
-            <h2>{ collection.name }</h2>
-            <Link href={ collection.id }>
-              <pfe-cta>
-                <a>Go to the collection</a>
-              </pfe-cta>
-            </Link>
-          </pfe-card>
-        ))}
+      <main className="container ">
+        <header className="hero container">
+          <h1 className="title">
+            Welcome to the Web Component Buffet
+          </h1>
+        </header>
+          <article className="pfe-l-grid pfe-m-gutters pfe-m-all-6-col pfe-m-all-4-col-on-md pfe-m-all-3-col-on-lg">
+          {collections.map((collection, index) => (
+            <pfe-card color="lightest" border key={ index }>
+              <h2 slot="pfe-card--header">{ collection.name }</h2>
+              <p>This is the lightest card with a border</p>
+              <div slot="pfe-card--footer">
+              <Link href={ collection.id }>
+                <pfe-cta>
+                  <a href="#">View this collection</a>
+                </pfe-cta>
+              </Link>
+              </div>
+            </pfe-card>
+
+          ))}
+        </article>
       </main>
 
       <footer>
