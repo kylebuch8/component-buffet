@@ -1,5 +1,6 @@
 :root {
   --main-container--padding: calc(3 * var(--pfe-theme--container-padding));
+  --pfe-band--Width: 1350px;
 }
 html {
   background: #eee;
@@ -33,8 +34,6 @@ hr {
   margin: var(--pfe-theme--container-padding) 0 0 0;
   z-index: 1;
   max-width: calc(1400px + 2 *  var(--pfe-theme--container-spacer) );
-  box-shadow: 1px 1px 20px #000;
- 
   margin-left: var(--pfe-theme--container-spacer);
   margin-right: var(--pfe-theme--container-spacer);
   --pfe-grid--Margin: var(--pfe-theme--content-spacer--body--md) 0;
