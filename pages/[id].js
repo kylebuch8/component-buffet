@@ -1,4 +1,6 @@
-import Head from 'next/head'
+import Head from 'next/head';
+import Link from "next/link";
+import React from "react";
 
 export default function Collection(collection) {
   return (
@@ -10,6 +12,9 @@ export default function Collection(collection) {
 
       <main className=" main container">
         <header className="hero">
+          <Link href="/">
+            <a>Home</a>
+          </Link>
           <h1 className="title">{ collection.name }</h1>
         </header>
 
@@ -22,39 +27,54 @@ export default function Collection(collection) {
         }
         
         <h2>{ collection.components.length } Elements</h2>
-        <article className="pfe-l-grid pfe-m-gutters pfe-m-all-6-col pfe-m-all-4-col-on-md pfe-m-all-4-col-on-lg">
+        <article>
+          <pfe-accordion>
+            {collection.components.map((component, index) => (
+              <React.Fragment key={index}>
+                <pfe-accordion-header key={ index }>
+                  <h4>{ component.name } </h4>
+                </pfe-accordion-header>              
 
-          {collection.components.map((component, index) => (
-            
-              <pfe-card color="lightest" border key={ index }>
-                <h4 slot="pfe-card--header">{ component.name } </h4>
-                <p>{ component.description } </p>
-                <p><pfe-icon icon="fas-github"></pfe-icon> <a href="{ component.repo }">GitHub</a> </p>
-                <h5>All the demos</h5>
-                <p> 
-                  <a href="{ component.demo }">Official demo page</a><br/>
-                  <a href="{ component.devDemo }">Dev demo</a><br/>
-                  <a href="{ component.storybook }">Storybook</a>
-                </p>
-                <h5>Code now</h5>
-              
-                <pfe-codeblock>
-                  <pre codeblock-container="true">
-                    <code>{ component.install } </code>
-                  </pre>
-                </pfe-codeblock>
-                
-                <br/>
-                <br/>
-                <pfe-codeblock>
-                  <pre codeblock-container="true">
-                    <code className="wrap">
-  &lt;script type="module" src="{ component.unpkg }"&gt;&lt;/script&gt;
-                    </code> 
-                  </pre>
-                </pfe-codeblock>
-              </pfe-card>
-          ))}
+                <pfe-accordion-panel>
+                  <p>{ component.description } </p>
+                  <p><pfe-icon icon="fas-github"></pfe-icon> <a href={ component.repo }>GitHub</a></p>
+                  {(component.demo || component.devDemo || component.storybook) &&
+                    <>
+                      <h5>All the demos</h5>
+                      <p> 
+                        <a href={ component.demo }>Official demo page</a><br/>
+                        <a href={ component.devDemo }>Dev demo</a><br/>
+                        <a href={ component.storybook }>Storybook</a>
+                      </p>
+                    </>
+                  }
+                  {component.install &&
+                    <>
+                      <h5>Code now</h5>
+                      <pfe-codeblock>
+                        <pre codeblock-container="true">
+                          <code>{ component.install } </code>
+                        </pre>
+                      </pfe-codeblock>
+                    </>
+                  }
+                  {component.unpkg &&
+                    <>
+                      <br/>
+                      <br/>
+                      <pfe-codeblock>
+                        <pre codeblock-container="true">
+                          <code>
+ &lt;script type="module" src="{ component.unpkg }"&gt;&lt;/script&gt;
+                          </code> 
+                        </pre>
+                      </pfe-codeblock>
+                    </>
+                  }
+                </pfe-accordion-panel>
+              </React.Fragment>
+            ))}
+          </pfe-accordion>
         </article>
         <footer>
           Powered by{' '}<a href="https://www.youtube.com/watch?v=jBsPZV14I-k">Cheeseburgers in Paradise</a>
