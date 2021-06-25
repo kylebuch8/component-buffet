@@ -11,23 +11,21 @@ export default function Home({ collections }) {
      
       <main className=" main container">
         <header className="hero ">
-          <h1 className="title">
-            Welcome to the Red Hat web component buffet!
-          </h1>
+          <h1 className="title">Red Hat Web Component Buffet</h1>
           <p>Explore the projects which contain components designed by and for Red Hatters.</p>
           <br/>
         </header>
-        <article className="pfe-l-grid pfe-m-gutters pfe-m-all-6-col pfe-m-all-4-col-on-md pfe-m-all-3-col-on-lg">
+        <article className="pfe-l-grid pfe-m-gutters pfe-m-all-6-col-on-md pfe-m-all-4-col-on-lg">
           {collections.map((collection, index) => (
             <pfe-card color="lightest" border key={ index }>
               <Link href={ collection.id }>
                 <h3 slot="pfe-card--header"><a>{ collection.name }</a></h3>
               </Link>
-              <p>This is the lightest card with a border</p>
+              <p>{ collection.description }</p>
               <div slot="pfe-card--footer">
               <Link href={ collection.id }>
                 <pfe-cta>
-                  <a>View this collection</a>
+                  <a>View the collection</a>
                 </pfe-cta>
               </Link>
               </div>
@@ -71,17 +69,22 @@ export async function getStaticProps() {
         {
           id: "patternfly-elements",
           name: "PatternFly Elements",
-          description: "Something really cool"
+          description: "A set of community-created web components based on PatternFly design."
         },
         {
           id: "chapeaux",
-          name: "Chapeaux",
-          description: "Functional components"
+          name: "Chapeaux Components",
+          description: "Web components for the many hats you wear."
+        },
+        {
+          id: "op-components",
+          name: "One Platform Components",
+          description: "One platform component library."
         },
         {
           id: "cp-elements",
           name: "CPElements",
-          description: "This repo was created to keep track of custom web components made for the customer portal that aren't necessarily great candidates for open source."
+          description: "Custom web components made for the Customer Portal that aren't necessarily great candidates for open source."
         }
       ]
     }
