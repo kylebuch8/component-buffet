@@ -24,6 +24,7 @@ class MyDocument extends Document {
           <script type="module" src="https://unpkg.com/@patternfly/pfe-cta@1.9.3/dist/pfe-cta.min.js"></script>
           <script type="module" src="https://unpkg.com/@patternfly/pfe-card@1.9.3/dist/pfe-card.min.js"></script>
           <script type="module" src="https://unpkg.com/@patternfly/pfe-icon@1.9.3/dist/pfe-icon.min.js"></script>
+          <script type="module" src="https://unpkg.com/@patternfly/pfe-codeblock@1.9.3/dist/pfe-codeblock.min.js"></script>
           <script type="module" src="main.js"></script>
         </body>
       </Html>

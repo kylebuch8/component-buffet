@@ -27,24 +27,32 @@ export default function Collection(collection) {
           {collection.components.map((component, index) => (
             
               <pfe-card color="lightest" border key={ index }>
-              <h4 slot="pfe-card--header">{ component.name } </h4>
-              <p>{ component.description } </p>
-              <p><pfe-icon icon="fas-github"></pfe-icon> <a href="{ component.repo }">GitHub</a> </p>
-              <h5>All the demos</h5>
-              <p> 
-                <a href="{ component.demo }">Official demo page</a><br/>
-                <a href="{ component.devDemo }">Dev demo</a><br/>
-                <a href="{ component.storybook }">Storybook</a>
-              </p>
-              <h5>Code now</h5>
-          
-              <code>{ component.install } </code>
-              <br/>
-              <br/>
-              <code class="wrap">
-              &lt;script type="module" src="{ component.unpkg }"&gt;&lt;/script&gt;
-              </code> 
-       
+                <h4 slot="pfe-card--header">{ component.name } </h4>
+                <p>{ component.description } </p>
+                <p><pfe-icon icon="fas-github"></pfe-icon> <a href="{ component.repo }">GitHub</a> </p>
+                <h5>All the demos</h5>
+                <p> 
+                  <a href="{ component.demo }">Official demo page</a><br/>
+                  <a href="{ component.devDemo }">Dev demo</a><br/>
+                  <a href="{ component.storybook }">Storybook</a>
+                </p>
+                <h5>Code now</h5>
+              
+                <pfe-codeblock>
+                  <pre codeblock-container="true">
+                    <code>{ component.install } </code>
+                  </pre>
+                </pfe-codeblock>
+                
+                <br/>
+                <br/>
+                <pfe-codeblock>
+                  <pre codeblock-container="true">
+                    <code className="wrap">
+  &lt;script type="module" src="{ component.unpkg }"&gt;&lt;/script&gt;
+                    </code> 
+                  </pre>
+                </pfe-codeblock>
               </pfe-card>
           ))}
         </article>
