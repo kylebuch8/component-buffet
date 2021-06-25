@@ -16,10 +16,9 @@ export default function Collection(collection) {
         </h1>
         <p dangerouslySetInnerHTML={{ __html: collection.summary }}></p>
         <pfe-icon icon="fas-github"></pfe-icon>
-      </main> 
-      <footer>
-        Powered by{' '}<a href="https://www.youtube.com/watch?v=jBsPZV14I-k">Cheeseburgers in Paradise</a>
-      </footer>
+        <footer>
+          Powered by{' '}<a href="https://www.youtube.com/watch?v=jBsPZV14I-k">Cheeseburgers in Paradise</a>
+        </footer>
       </main>
     </div>
   )
