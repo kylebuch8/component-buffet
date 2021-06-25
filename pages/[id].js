@@ -12,7 +12,10 @@ export default function Collection(collection) {
         <header className="hero">
           <h1 className="title">{ collection.name }</h1>
         </header>
- 
+
+        { collection.website && 
+          <p><a href={ collection.website }>{ collection.website }</a></p>
+        }
         <p>{ collection.description }</p>
         { collection.summary && 
           <div dangerouslySetInnerHTML={{ __html: collection.summary }}></div>
@@ -67,7 +70,12 @@ export async function getStaticPaths() {
     },
     {
       params: {
-        id: "one-platform"
+        id: "op-components"
+      }
+    },
+    {
+      params: {
+        id: "cp-elements"
       }
     }
   ];
@@ -84,8 +92,9 @@ export async function getStaticProps({ params }) {
   const data = {
     "patternfly-elements": {
       name: "PatternFly Elements",
-      description: "Something really cool",
-      summary: "<p>Something even more cool than the description</p><pfe-cta><a href='https://patternflyelements.com/'>Learn more</a></pfe-cta>",
+      description: "A set of community-created web components based on PatternFly design.",
+      summary: "<p>PatternFly Elements is a work-in-progress collection of flexible and lightweight Web Components based on the <a href=\"https://ux.redhat.com/\">Unified Design Kit</a>. PatternFly Elements are:</p><ul><li>Lightweight: small file size, minimal boilerplate, no \"framework-like\" features</li><li>Universal: write once, use everywhere. PatternFly Elements work in React, Vue, Angular, vanilla JS, anywhere HTML elements are used.</li><li>Themable: Make overrides as needed via attributes or CSS variables</li></ul><p>The result of these principles is that you can plug one set of components into a wide variety of applications; bringing UX consistency and developer familiarity to any web project.</p>",
+      website: "https://patternflyelements.org",
       repo: "https://github.com/patternfly/patternfly-elements",
       components: [
         {
@@ -122,7 +131,7 @@ export async function getStaticProps({ params }) {
     },
     "chapeaux": {
       name: "Chapeaux Components",
-      description: "Widgets for a digital supply chain of web assets",
+      description: "Web components for the many hats you wear.",
       repo: "https://github.com/chapeaux/cpx-components",
       components: [
         {
@@ -189,7 +198,8 @@ export async function getStaticProps({ params }) {
     },
     "op-components": {
       name: "One Platform Components",
-      description: "One platform component library",
+      description: "One platform component library.",
+      website: "https://one.redhat.com/components",
       repo: "https://github.com/1-Platform/op-components",
       components: [
         {
@@ -244,7 +254,7 @@ export async function getStaticProps({ params }) {
     },
     "cp-elements": {
       name: "CPElements",
-      description: "This repo was created to keep track of custom web components made for the customer portal that aren't necessarily great candidates for open source.",
+      description: "Custom web components made for the Customer Portal that aren't necessarily great candidates for open source.",
       repo: "https://gitlab.cee.redhat.com/customer-platform/cp-elements",
       components: [
         {
