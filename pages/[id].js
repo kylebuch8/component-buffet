@@ -4,7 +4,7 @@ export default function Collection(collection) {
   return (
     <div className="container">
       <Head>
-        <title>Collection</title>
+        <title>{ collection.name } - Component Buffet</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
