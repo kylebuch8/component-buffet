@@ -3,18 +3,19 @@ import Link from 'next/link';
 
 export default function Home({ collections }) {
   return (
-    <div className="container">
+    <div className="wrapper container homepage">
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="container homepage">
+      <main className=" main container">
         <header className="hero container">
           <h1 className="title">
             Welcome to the Red Hat web component buffet!
           </h1>
           <p>Explore the projects which contain components designed by and for Red Hatters.</p>
+          <br/>
         </header>
         <article className="pfe-l-grid pfe-m-gutters pfe-m-all-6-col pfe-m-all-4-col-on-md pfe-m-all-3-col-on-lg">
           {collections.map((collection, index) => (
@@ -34,11 +35,26 @@ export default function Home({ collections }) {
 
           ))}
         </article>
-      </main>
+        <aside>
+        <br/> 
+        <hr/>
+        <br/>
+        <h2>What are web components?</h2>
+        <p>Web components are a set of web platform APIs that allow you to create new custom, reusable, encapsulated HTML tags to use in web pages and web apps. Custom components and widgets build on the Web Component standards, will work across modern browsers, and can be used with any JavaScript library or framework that works with HTML.</p>
 
-      <footer>
+        <p>Web components are based on existing web standards. Features to support web components are currently being added to the HTML and DOM specs, letting web developers easily extend HTML with new elements with encapsulated styling and custom behavior.</p>
+
+        <h2>Why are there multiple projects?</h2>
+        <p>Different projects have different focus areas. There are reasons, ok?</p>
+
+
+        </aside>
+        <footer>
         Powered by{' '}<a href="https://www.youtube.com/watch?v=jBsPZV14I-k">Cheeseburgers in Paradise</a>
       </footer>
+      </main>
+
+
     </div>
   )
 }
