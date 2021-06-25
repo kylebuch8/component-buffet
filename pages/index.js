@@ -17,7 +17,7 @@ export default function Home({ collections }) {
 <br/>
         <pfe-band color="lightest">
         <header slot="pfe-band--header">
-      <h2>DA PROJECTS</h2>
+      <h2>The projects</h2>
       </header>
         <article class="pfe-l-grid pfe-l-grid-fill-height pfe-m-gutters pfe-m-all-6-col">
           {collections.map((collection, index) => (
